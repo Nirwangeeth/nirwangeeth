@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Maldives - Paradise on Earth</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-blue: #1a75ff;
+        --secondary-blue: #005ce6;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+      }
+
+      .hero-section {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .navbar {
+        background: rgba(26, 117, 255, 0.95) !important;
+        backdrop-filter: blur(10px);
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: white !important;
+        font-weight: 500;
+      }
+
+      .navbar-light .navbar-brand {
+        color: white !important;
+        font-weight: bold;
+      }
+
+      .navbar-light .navbar-toggler {
+        border-color: white;
+      }
+
+      .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      .card {
+        transition: all 0.3s ease;
+        border: none;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .experience-card {
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .custom-shadow {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-blue);
+        border-color: var(--secondary-blue);
+      }
+
+      .weather-widget {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        padding: 20px;
+      }
+
+      .booking-form {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 20px;
+      }
+
+      .activity-icon {
+        font-size: 2rem;
+        color: var(--primary-blue);
+      }
+
+      .floating-search {
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 800px;
+        z-index: 100;
+      }
+
+      .search-bar {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .gallery-img:hover {
+        transform: scale(1.05);
+      }
+
+      .features-list i {
+        color: var(--primary-blue);
+      }
+
+      .stats-counter {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Visit Maldives</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experiences">Experiences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resorts">Resorts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#activities">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div
+      id="home"
+      class="hero-section"
+      style="background-image: url('https://example.com/maldives-hero.jpg')"
+    >
+      <div class="hero-overlay"></div>
+      <div class="container position-relative">
+        <div data-aos="fade-up">
+          <h1 class="display-3 fw-bold mb-4">Welcome to Paradise</h1>
+          <p class="lead mb-4">
+            Discover the magic of Maldives - where dreams become reality
+          </p>
+          <a href="#booking" class="btn btn-light btn-lg me-2">Book Now</a>
+          <a href="#experiences" class="btn btn-outline-light btn-lg"
+            >Explore More</a
+          >
+        </div>
+      </div>
+      <!-- Floating Search Bar -->
+      <div class="floating-search">
+        <div class="search-bar">
+          <div class="row g-2">
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="Where to?" />
+            </div>
+            <div class="col-md-3">
+              <input type="date" class="form-control" placeholder="Check-in" />
+            </div>
+            <div class="col-md-3">
+              <input type="date" class="form-control" placeholder="Check-out" />
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-primary w-100">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3" data-aos="fade-up">
+            <div class="stats-counter">1200+</div>
+            <p>Islands</p>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="stats-counter">150+</div>
+            <p>Resorts</p>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="stats-counter">365</div>
+            <p>Sunny Days</p>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="stats-counter">50+</div>
+            <p>Dive Sites</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section id="experiences" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">
+          Unforgettable Experiences
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card experience-card custom-shadow">
+              <img
+                src="https://example.com/overwater-villa.jpg"
+                class="card-img-top"
+                alt="Water Villa"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Overwater Villas</h5>
+                <p class="card-text">
+                  Experience luxury living above crystal-clear waters in our
+                  iconic overwater villas.
+                </p>
+                <div class="features-list">
+                  <p><i class="fas fa-check me-2"></i>Private sundeck</p>
+                  <p><i class="fas fa-check me-2"></i>Direct ocean access</p>
+                  <p><i class="fas fa-check me-2"></i>Glass floor panels</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card experience-card custom-shadow">
+              <img
+                src="https://example.com/diving.jpg"
+                class="card-img-top"
+                alt="Diving"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Diving Adventures</h5>
+                <p class="card-text">
+                  Explore vibrant coral reefs and encounter magnificent marine
+                  life.
+                </p>
+                <div class="features-list">
+                  <p>
+                    <i class="fas fa-check me-2"></i>Professional instructors
+                  </p>
+                  <p><i class="fas fa-check me-2"></i>All skill levels</p>
+                  <p><i class="fas fa-check me-2"></i>Equipment provided</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card experience-card custom-shadow">
+              <img
+                src="https://example.com/spa.jpg"
+                class="card-img-top"
+                alt="Spa"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Spa & Wellness</h5>
+                <p class="card-text">
+                  Rejuvenate your body and soul with our world-class spa
+                  treatments.
+                </p>
+                <div class="features-list">
+                  <p><i class="fas fa-check me-2"></i>Beachfront massages</p>
+                  <p><i class="fas fa-check me-2"></i>Yoga sessions</p>
+                  <p><i class="fas fa-check me-2"></i>Meditation classes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weather Widget -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="weather-widget text-center" data-aos="fade-up">
+              <h3 class="mb-4">Current Weather</h3>
+              <i class="fas fa-sun fa-3x mb-3 text-warning"></i>
+              <h4>30°C / 86°F</h4>
+              <p>Sunny with light breeze</p>
+              <div class="row mt-3">
+                <div class="col">
+                  <p>Humidity: 75%</p>
+                </div>
+                <div class="col">
+                  <p>Water Temp: 28°C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Popular Activities</h2>
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="fade-up">
+            <div class="text-center">
+              <i class="fas fa-swimming-pool activity-icon mb-3"></i>
+              <h5>Swimming</h5>
+              <p>Crystal clear lagoons</p>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center">
+              <i class="fas fa-fish activity-icon mb-3"></i>
+              <h5>Snorkeling</h5>
+              <p>Vibrant marine life</p>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center">
+              <i class="fas fa-ship activity-icon mb-3"></i>
+              <h5>Sailing</h5>
+              <p>Island hopping</p>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center">
+              <i class="fas fa-umbrella-beach activity-icon mb-3"></i>
+              <h5>Beach Sports</h5>
+              <p>Volleyball & more</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Photo Gallery</h2>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <img
+              src="https://example.com/beach-view.jpg"
+              class="gallery-img"
+              alt="Beach View"
+            />
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <img
+              src="https://example.com/sunset.jpg"
+              class="gallery-img"
+              alt="Sunset"
+            />
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="https://example.com/diving.jpg"
+              class="gallery-img"
+              alt="Diving"
+            />
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="https://example.com/overwater-bungalows.jpg"
+              class="gallery-img"
+              alt="Overwater Bungalows"
+            />
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <img
+              src="https://example.com/resort-pool.jpg"
+              class="gallery-img"
+              alt="Resort Pool"
+            />
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <img
+              src="https://example.com/local-market.jpg"
+              class="gallery-img"
+              alt="Local Market"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Get in Touch</h2>
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i>Maldives, Indian Ocean
+              </p>
+              <p><i class="fas fa-phone me-2"></i>+960 123 456 789</p>
+              <p><i class="fas fa-envelope me-2"></i>info@visitmaldives.com</p>
+              <p>
+                <i class="fas fa-clock me-2"></i>Mon - Fri: 9:00 AM - 5:00 PM
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-up">
+            <form class="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Your Message"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center">
+      <div class="container">
+        <p>&copy; 2025 Visit Maldives. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
