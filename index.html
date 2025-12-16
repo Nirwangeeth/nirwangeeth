@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        background: #f4f4f4;
+      }
+
+      /* Header and Navigation */
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Sections */
+      section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      section#home {
+        background: url("hero-bg.jpg") no-repeat center center/cover;
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      section#home .content {
+        text-align: center;
+      }
+
+      section#projects .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .project-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 300px;
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover {
+        transform: scale(1.05);
+      }
+
+      /* Buttons */
+      .btn {
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .btn:hover {
+        background: #555;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      section {
+        animation: fadeIn 2s ease-in;
+      }
+
+      /* Footer */
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home">
+      <div class="content">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Discover my projects and skills.</p>
+        <button class="btn" onclick="scrollToSection('about')">
+          Learn More
+        </button>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Project 1</h3>
+          <p>Description of project 1.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project 2</h3>
+          <p>Description of project 2.</p>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("nav ul li a");
+        links.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const sectionID = this.getAttribute("href").substring(1);
+            scrollToSection(sectionID);
+          });
+        });
+      });
+
+      function scrollToSection(id) {
+        const section = document.getElementById(id);
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
