@@ -122,7 +122,7 @@ body {
 /* hero section */
 #hero {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/one-page-site/img/brand/page-imges/hero.jpg") center/cover no-repeat;
+    url("img/brand/page-imges/hero.jpg") center/cover no-repeat;
   font-family: var(--primary-font);
   text-align: center;
   background-size: cover;
@@ -1016,3 +1016,4 @@ body {
 }
 
 /* Media Querys end */
+
